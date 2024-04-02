@@ -3,6 +3,24 @@ choices = 3
 total = 0
 player = 1
 
+def valid_input(message,floor,ceiling):
+    while True:
+        number = input(message)
+
+        if number.isdigit() and int(number) >= floor and int(number) <= ceiling:
+            return number
+        else:
+            print("Invalid input: either not a number or outside of range\n")
+
+def welcome():
+    pass
+
+def main_menu():
+    pass
+
+def gameloop():
+    pass
+
 print(""
       +"\nWelcome to the sum game".upper()
       +f"\nObjective: Force opponent to get a sum of {target} or more"
@@ -14,7 +32,7 @@ input("\nPress ENTER when you are ready to play...")
 
 while (total < target):
     print("\nPlayer",player)
-    number = input(f"How much would you like to add to the total? (Number between 1 and {choices} (inclusive)\n> ")
+    number = valid_input(f"How much would you like to add to the total? (Number between 1 and {choices} (inclusive)\n> ",1,choices)
     total += int(number)
     opponent = abs(3 - player)
 
