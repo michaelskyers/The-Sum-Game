@@ -4,12 +4,10 @@ total = 0
 player = 1
 
 def valid_input(message,floor,ceiling):
-    valid = False
-
-    while not valid:
+    while True:
         number = input(message)
 
-        if number.isdigit() and number >= floor and number <= ceiling:
+        if number.isdigit() and int(number) >= floor and int(number) <= ceiling:
             return number
         else:
             print("Invalid input: either not a number or outside of range\n")
